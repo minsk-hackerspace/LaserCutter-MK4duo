@@ -82,7 +82,7 @@
 
 // Some particular clients re-start sending commands only after receiving a 'wait' when there is a bad serial-connection.
 // Milliseconds
-#define NO_TIMEOUTS 1000
+//#define NO_TIMEOUTS 1000
 // Uncomment to include more info in ok command
 //#define ADVANCED_OK
 

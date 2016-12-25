@@ -38,7 +38,7 @@
 // Please choose the one that matches your setup.
 // 1 = Single pin control - LOW when off, HIGH when on, PWM to adjust intensity
 // 2 = Two pin control - A firing pin for which LOW = off, HIGH = on, and a seperate intensity pin which carries a constant PWM signal and adjusts duty cycle to control intensity
-#define LASER_CONTROL 1
+#define LASER_CONTROL 2
 
 // The following define to use the new HakanBasted laser_pulse method to fire laser. It should be more efficient, but it's less tested.
 // Thanks for it to HakanBastedt that has implemented it for Marlin at https://github.com/HakanBastedt/Marlin
@@ -74,12 +74,12 @@
 //#define LASER_PERIPHERALS_TIMEOUT 30000  // Number of milliseconds to wait for status signal from peripheral control board
 
 // Uncomment the following line to enable cubic bezier curve movement with the G5 code
-// #define G5_BEZIER
+//#define G5_BEZIER
 
 // Uncomment these options for the Buildlog.net laser cutter, and other similar models
 #define LASER_WATTS 40.0
 #define LASER_DIAMETER 0.1        // milimeters
-#define LASER_PWM 50000           // hertz
+#define LASER_PWM 25000           // hertz
 #define LASER_FOCAL_HEIGHT 74.50  // z axis position at which the laser is focused
 
 #endif

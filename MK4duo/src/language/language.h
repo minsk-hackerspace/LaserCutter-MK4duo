@@ -149,7 +149,7 @@
 // SD Card
 #define MSG_SD_CANT_OPEN_SUBDIR             "Cannot open subdir "
 #define MSG_SD_ERRORCODE                    "SD errorCode:"
-#define MSG_SD_INIT_FAIL                    "SD init fail"
+#define MSG_SD_INIT_FAIL                    "SD init fail\necho:SD"
 #define MSG_SD_CARD_OK                      "SD card ok"
 #define MSG_SD_OPEN_FILE_FAIL               "open failed, File: "
 #define MSG_SD_FILE_OPENED                  "File opened: "

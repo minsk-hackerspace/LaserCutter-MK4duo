@@ -69,7 +69,7 @@
  * Displayed in the LCD "Ready" message.                                                 *
  *                                                                                       *
  *****************************************************************************************/
-#define CUSTOM_MACHINE_NAME "Prusa I3"
+#define CUSTOM_MACHINE_NAME "Hackerspace.by K4040"
 /*****************************************************************************************/
 
 
@@ -195,7 +195,7 @@
 #define Z_PROBE_OFFSET_FROM_NOZZLE -1     // Z offset: -below [of the nozzle] (always negative!)
 
 // X and Y axis travel speed between probes, in mm/min
-#define XY_PROBE_SPEED 10000
+#define XY_PROBE_SPEED 7000
 // Speed for the first approach when double-probing (with PROBE_DOUBLE_TOUCH)
 #define Z_PROBE_SPEED_FAST 120
 // Speed for the "accurate" probe of each point
@@ -224,7 +224,7 @@
  *                                                                                       *
  *****************************************************************************************/
 #define X_HOME_DIR -1
-#define Y_HOME_DIR -1
+#define Y_HOME_DIR 1
 #define Z_HOME_DIR -1
 #define E_HOME_DIR -1
 /*****************************************************************************************/
@@ -281,8 +281,8 @@
  * Change (or reverse the motor connector) if an axis goes the wrong way.                *
  *                                                                                       *
  *****************************************************************************************/
-#define INVERT_X_DIR false
-#define INVERT_Y_DIR false
+#define INVERT_X_DIR true
+#define INVERT_Y_DIR true
 #define INVERT_Z_DIR false
 #define INVERT_E0_DIR false
 #define INVERT_E1_DIR false
@@ -302,8 +302,8 @@
  *****************************************************************************************/
 #define DISABLE_X false
 #define DISABLE_Y false
-#define DISABLE_Z false
-#define DISABLE_E false
+#define DISABLE_Z true
+#define DISABLE_E true
 // Disable only inactive extruder and keep active extruder enabled
 //#define DISABLE_INACTIVE_EXTRUDER
 /*****************************************************************************************/
@@ -316,11 +316,11 @@
  * Travel limits after homing (units are in mm)                                          *
  *                                                                                       *
  *****************************************************************************************/
-#define X_MAX_POS 200
+#define X_MAX_POS 400
 #define X_MIN_POS 0
-#define Y_MAX_POS 200
+#define Y_MAX_POS 400
 #define Y_MIN_POS 0
-#define Z_MAX_POS 200
+#define Z_MAX_POS 70
 #define Z_MIN_POS 0
 #define E_MIN_POS 0
 /*****************************************************************************************/
@@ -498,7 +498,7 @@
  *                                                                                       *
  *****************************************************************************************/
 // Default steps per unit               X,  Y,    Z,  E0...(per extruder)
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {80, 80, 3200, 625, 625, 625, 625}
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {157.4802 / 2, 157.4802 / 2, 320, 625, 625, 625, 625}
 /*****************************************************************************************/
 
 
@@ -507,7 +507,7 @@
  *****************************************************************************************/
 //                                       X,   Y, Z,  E0...(per extruder). (mm/sec)
 #define DEFAULT_MAX_FEEDRATE          {300, 300, 2, 100, 100, 100, 100}
-#define MANUAL_FEEDRATE               {50*60, 50*60, 4*60, 60}  // Feedrates for manual moves along X, Y, Z, E from panel
+#define MANUAL_FEEDRATE               {500*60, 500*60, 4*60, 60}  // Feedrates for manual moves along X, Y, Z, E from panel
 #define DEFAULT_MINIMUMFEEDRATE       0.0                       // minimum feedrate
 #define DEFAULT_MINTRAVELFEEDRATE     0.0
 // Minimum planner junction speed. Sets the default minimum speed the planner plans for at the end
@@ -555,8 +555,8 @@
  ************************************ Homing feedrate ************************************
  *****************************************************************************************/
 // Homing speeds (mm/m)
-#define HOMING_FEEDRATE_X (50*60)
-#define HOMING_FEEDRATE_Y (50*60)
+#define HOMING_FEEDRATE_X (100*60)
+#define HOMING_FEEDRATE_Y (100*60)
 #define HOMING_FEEDRATE_Z (2*60)
 
 // homing hits the endstop, then retracts by this distance, before it tries to slowly bump again:

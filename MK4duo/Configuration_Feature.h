@@ -974,7 +974,7 @@
  * Uncomment EEPROM CHITCHAT to enable EEPROM Serial responses.                                                         *
  *                                                                                                                      *
  ************************************************************************************************************************/
-//#define EEPROM_SETTINGS
+#define EEPROM_SETTINGS
 //#define EEPROM_CHITCHAT // Uncomment this to enable EEPROM Serial responses.
 //#define DISABLE_M503
 /************************************************************************************************************************/
@@ -983,7 +983,7 @@
 /*****************************************************************************************
  *************************************** SDCARD *******************************************
  ****************************************************************************************/
-//#define SDSUPPORT
+#define SDSUPPORT
 
 //#define SDSLOW              // Use slower SD transfer mode (not normally needed - uncomment if you're getting volume init error)
 //#define SDEXTRASLOW         // Use even slower SD transfer mode (not normally needed - uncomment if you're getting volume init error)
@@ -1415,7 +1415,7 @@
  * Check also Configuration_Laser.h                                       *
  *                                                                        *
  **************************************************************************/
-//#define LASERBEAM
+#define LASERBEAM
 /**************************************************************************/
 
 
@@ -1887,10 +1887,10 @@
  *                                                                                       *
  *****************************************************************************************/
 //#define START_GCODE
-#define START_PRINTING_SCRIPT "G28\nG1 Z10 F8000"
+#define START_PRINTING_SCRIPT "G28"
 
 //#define STOP_GCODE
-#define STOP_PRINTING_SCRIPT "G28\nM107\nM104 T0 S0\nM140 S0\nM84\nM81"
+#define STOP_PRINTING_SCRIPT "G28\nM107\nM5\nM84"
 /*****************************************************************************************/
  
 #endif

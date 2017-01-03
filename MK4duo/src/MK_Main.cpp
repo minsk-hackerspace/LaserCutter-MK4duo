@@ -3362,7 +3362,6 @@ inline void gcode_G0_G1(
  * G3: Counterclockwise Arc
  */
 #if ENABLED(ARC_SUPPORT)
-#pragma message("We are here")
   inline void gcode_G2_G3(bool clockwise) {
     if (IsRunning()) {
 
@@ -9858,9 +9857,7 @@ void process_next_command() {
         #endif
 
       // G2, G3
-#pragma message("Before enabled G3")
       #if ENABLED(ARC_SUPPORT) && !IS_SCARA
-#pragma message("Inside enabled G3")          
         case 2: // G2  - CW ARC
         case 3: // G3  - CCW ARC
           gcode_G2_G3(codenum == 2); break;

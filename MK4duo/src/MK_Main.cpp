@@ -3362,6 +3362,7 @@ inline void gcode_G0_G1(
  * G3: Counterclockwise Arc
  */
 #if ENABLED(ARC_SUPPORT)
+#pragma message("We are here")
   inline void gcode_G2_G3(bool clockwise) {
     if (IsRunning()) {
 
@@ -3418,6 +3419,9 @@ inline void gcode_G0_G1(
         // Bad arguments
         SERIAL_LM(ER, MSG_ERR_ARC_ARGS);
       }
+    #if ENABLED(LASERBEAM) && ENABLED(LASER_FIRE_G1)
+      laser.status = LASER_OFF;
+    #endif
     }
   }
 #endif // ARC_SUPPORT
@@ -9854,11 +9858,14 @@ void process_next_command() {
         #endif
 
       // G2, G3
-      #if ENABLED(ARC_SUPPORT) && NOMECH(SCARA)
+#pragma message("Before enabled G3")
+      #if ENABLED(ARC_SUPPORT) && !IS_SCARA
+#pragma message("Inside enabled G3")          
         case 2: // G2  - CW ARC
         case 3: // G3  - CCW ARC
           gcode_G2_G3(codenum == 2); break;
       #endif
+
 
       // G4 Dwell
       case 4:
@@ -9936,6 +9943,7 @@ void process_next_command() {
         relative_mode = true; break;
       case 92: // G92
         gcode_G92(); break;
+      default: code_is_good = false;
     }
     break;
 
